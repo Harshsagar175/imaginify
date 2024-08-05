@@ -14,14 +14,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-
+import logo from '/public/assets/images/logo-text.svg'
 const MobileNav = () => {
   const pathname = usePathname();
   return (
     <header className="header">
       <Link href="/" className="flex items-center gap-2 md:py-2">
         <Image
-          src="/assets/images/logo-text.svg"
+          src={logo}
           alt="logo"
           width={180}
           height={180}
@@ -34,7 +34,7 @@ const MobileNav = () => {
           <Sheet>
             <SheetTrigger><Image src='/assets/icons/menu.svg' alt='menu' width={32} height={32} /></SheetTrigger>
             <SheetContent className="sheet-content sm:w-64">
-              <Image src='assets/images/logo-text.svg' alt="logo" width={152} height={23} />
+              <Image src={logo} alt="logo" width={152} height={23} />
               <ul className="header-nav_elements">
               {navLinks.map((link) => {
                 const isActive = link.route === pathname;
